@@ -52,8 +52,8 @@ if ('generateStaticParams' in entry) {
 }
 
 export interface PageProps {
-  params?: SegmentParams
-  searchParams?: any
+  params?: Promise<SegmentParams>
+  searchParams?: Promise<any>
 }
 export interface LayoutProps {
   children?: React.ReactNode

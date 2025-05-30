@@ -3,6 +3,11 @@ import EditUserForm from "@/components/edit-user-form";
 import { Pages, Routes } from "@/constants/enums";
 import { redirect } from "next/navigation";
 
+type Props = {
+  params: Promise<{ userId: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
 // ✅ توليد المسارات الثابتة لجميع المستخدمين
 export async function generateStaticParams() {
   const users = await getUsers();
@@ -10,12 +15,8 @@ export async function generateStaticParams() {
 }
 
 // ✅ صفحة تعديل المستخدم
-export default async function EditUserPage({
-  params,
-}: {
-  params: { userId: string };
-}) {
-  const { userId } = params;
+export default async function EditUserPage({ params }: Props) {
+  const { userId } = await params;
 
   // إحضار بيانات المستخدم بناءً على userId
   const user = await getUser(userId);

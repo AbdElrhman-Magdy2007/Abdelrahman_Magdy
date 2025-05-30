@@ -1,4 +1,6 @@
 // src/app/admin/page.tsx
+export const dynamic = 'force-dynamic';
+
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { UserRole } from "@prisma/client";
