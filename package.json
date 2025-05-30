@@ -1,10 +1,10 @@
 {
-  "name": "Abdelrahman Magdy",
+  "name": "Abdelrahman-Magdy",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -40,6 +40,7 @@
     "@radix-ui/react-toast": "^1.2.14",
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.9.0",
     "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.0",
@@ -63,7 +64,6 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.50.1",
     "react-loading-skeleton": "^3.5.0",
-    "react-particles": "^2.12.2",
     "react-resizable-panels": "^3.0.2",
     "recharts": "^2.15.3",
     "sonner": "^1.7.4",
@@ -74,7 +74,6 @@
     "zod": "^3.25.23"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.2.17",
     "@types/bcrypt": "^5.0.2",
     "@types/lodash": "^4.17.17",
     "@types/negotiator": "^0.6.3",
@@ -82,14 +81,14 @@
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "@types/uuid": "^10.0.0",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.56.0",
     "eslint-config-next": "15.0.4",
-    "postcss": "^8.4.35",
+    "postcss": "^8.5.4",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1",
     "prisma": "^6.8.2",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.3.3"
   }
 }
