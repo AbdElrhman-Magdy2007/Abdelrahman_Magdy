@@ -57,8 +57,7 @@ export interface PageProps {
 }
 export interface LayoutProps {
   children?: React.ReactNode
-
-  params?: Promise<SegmentParams>
+  params?: SegmentParams
 }
 
 // =============
