@@ -9,7 +9,7 @@ import { Category } from "@prisma/client";
 import Form from "../../_components/Form";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 import { getCategories } from "@/app/server/db/categories";
 import { getProducts } from "@/app/server/db/products";
 import { Suspense } from "react";
