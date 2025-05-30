@@ -3,24 +3,24 @@ import EditUserForm from "@/components/edit-user-form";
 import { Pages, Routes } from "@/constants/enums";
 import { redirect } from "next/navigation";
 
-// Generate static parameters for paths
+// ✅ توليد المسارات الثابتة لجميع المستخدمين
 export async function generateStaticParams() {
   const users = await getUsers();
   return users.map((user) => ({ userId: user.id }));
 }
 
-// Edit user page
-async function EditUserPage({
+// ✅ صفحة تعديل المستخدم
+export default async function EditUserPage({
   params,
 }: {
-  params: Promise<{ userId: string }>;
+  params: { userId: string };
 }) {
-  const { userId } = await params;
+  const { userId } = params;
 
-  // Fetch user data based on userId
+  // إحضار بيانات المستخدم بناءً على userId
   const user = await getUser(userId);
 
-  // Redirect if user is not found
+  // إعادة التوجيه إذا لم يتم العثور على المستخدم
   if (!user) {
     redirect(`/${Routes.ADMIN}/${Pages.USERS}`);
   }
@@ -38,5 +38,3 @@ async function EditUserPage({
     </main>
   );
 }
-
-export default EditUserPage;
